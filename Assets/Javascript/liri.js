@@ -2,6 +2,7 @@ let enviornment = require("dotenv").config();
 //.. Key.js content to be stored in this variable
 let keys = require("./key");
 //..Access to information
+let spotify = require('node-spotify-api');
 let spotify = new spotify({
     id: keys.spotify.id,
     secret: keys.spotify.secret,
