@@ -7,13 +7,3 @@ exports.spotify = {
 };
 //..
 let spotify = require('node-spotify-api');
-let spotify = new spotify({
-    id: SPOTIFY_ID,
-    secret: SPOTIFY_SECRET
-});
-spotify.search({type:'track',query:'All the Small Things'}, function(error, data){
-    if (error){
-        return console.log('Error Ocurred' + error);
-    }
-    console.log(data);
-});
