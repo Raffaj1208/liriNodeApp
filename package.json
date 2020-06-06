@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/Raffaj1208/liriNodeApp/issues"
   },
-  "homepage": "https://github.com/Raffaj1208/liriNodeApp#readme"
+  "homepage": "https://github.com/Raffaj1208/liriNodeApp#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "node-spotify-api": "^1.1.1"
+  }
 }
