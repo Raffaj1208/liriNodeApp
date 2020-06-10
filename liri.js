@@ -3,25 +3,26 @@ let keys = require("./keys");
 let Spotify = require('node-spotify-api');
 let spotify = new Spotify(keys.spotify);
 let command = process.argv[2];
-let search = process.argv[3];
+let songName = process.argv[3];
 //.. 
-function action(command, search){
+function action(){
     switch (command) {
         case "spotify-this-song":
-        spotifyThis(search);
+        spotifyThis();
         break;
     }
 };
-function spotifyThis(search){
+
+function spotifyThis(){
     let searchTrack;
-    if (command === undefined){
+    if (songName === undefined){
         searchTrack = "The Sign Ace of Base";
     } else {
-        searchTrack = search;
+        searchTrack = songName;
     }
     spotify.search({
         type: 'track',
-        query: 'All the Small Things'},
+        query: searchTrack},
         function(error, data){
         if (error){
             return console.log('Error occurred:' + error);
@@ -33,7 +34,6 @@ function spotifyThis(search){
             console.log("Album:" + data.tracks.items[0].album.name);
             console.log("\n---------------------------------------------------\n");
         }
-        console.log(data);
     });
 };
 //..
@@ -42,9 +42,8 @@ function read(){
         fs.readFile("keys.js", "utf8", function(error, data) {
             console.log(data);
             let dataArray = data.split(",");
+
         });
     }
 };
 action();
-read();
-spotifyThis();
