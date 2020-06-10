@@ -4,8 +4,8 @@ let Spotify = require('node-spotify-api');
 let spotify = new Spotify(keys.spotify);
 let command = process.argv[2];
 let search = process.argv[3];
-//..
-function action(){
+//.. 
+function action(command, search){
     switch (command) {
         case "spotify-this-song":
         spotifyThis(search);
@@ -35,5 +35,14 @@ function spotifyThis(search){
         }
         console.log(data);
     });
+};
+//..
+function read(){
+    let fileRead = function() {
+        fs.readFile("keys.js", "utf8", function(error, data) {
+            console.log(data);
+            let dataArray = data.split(",");
+        }
+    }
 };
 action();
