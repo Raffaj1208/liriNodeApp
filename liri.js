@@ -42,7 +42,9 @@ function read(){
         fs.readFile("keys.js", "utf8", function(error, data) {
             console.log(data);
             let dataArray = data.split(",");
-        }
+        });
     }
 };
 action();
+read();
+spotifyThis();
